@@ -15,11 +15,4 @@ class ApplicationController < ActionController::Base
   def destroy
     @user.delete
   end
-
-  private
-
-  def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
-  end
-
 end
